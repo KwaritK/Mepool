@@ -1,4 +1,4 @@
-import { connectMongoDB } from "@lib/mongodb";
+import { connectDB } from "@/lib/mongodb";
 import User from "@/models/user"; // ให้ตรวจสอบว่ามีไฟล์ User.js ใน models แล้ว
 import { NextResponse } from "next/server";
 
@@ -7,7 +7,7 @@ export async function POST(req) {
   const { id, password, name, role, wardID } = await req.json();
 
   try {
-    await connectMongoDB();
+    await connectDB();
 
     // ตรวจสอบว่าผู้ใช้มีอยู่แล้วหรือไม่
     const existingUser = await User.findOne({ id });

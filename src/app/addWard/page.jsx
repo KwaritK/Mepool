@@ -31,11 +31,11 @@ export default function AddWard() {
     <div > 
       <Navbar/>
     
-    <div className="max-w-md mx-auto p-6 bg-slate-500 rounded-xl shadow-md space-y-4 ">
+    <div className="mt-10 max-w-md mx-auto p-6 bg-slate-500 rounded-xl shadow-md space-y-4 ">
       
       <h2 className="text-xl font-semibold">🏥 เพิ่มข้อมูลแผนก</h2>
 
-      {message && <p className="text-sm text-red-500">{message}</p>}
+      {message && <p className="text-sm text-green-500">{message}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

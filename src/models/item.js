@@ -1,25 +1,17 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
-const EquipmentSchema = new Schema({
-  Item_ID: { type: String, required: true, unique: true }, // Primary Key (P0000, P0001,...)
+const EquipmentSchema = new mongoose.Schema({
+  Item_ID: { type: String, required: true, unique: true }, // P0001, P0002
   Type: { type: String, enum: ["Infusion pump", "Syringe pump"], required: true },
   Asset_Number: { type: String, required: true },
-  Status: { type: Number, enum: [0, 1, 2, 3, 4], required: true },
-  Ward_ID: { type: String, ref: "Ward" }, // Foreign Key
-  Brands: { type: String, required: true },
-  Models: { type: String, required: true },
-  Image: { type: String },
-  Last_Check: { type: Date, required: true },
-  End_Time: { type: Date },
+  Status: { type: Number, enum: [0, 1, 2, 3, 4]},
+  Ward_ID: { type: String, required: true },
+  Brands: { type: String, enum: ["TERUMO", "FRESENIUS"], required: true },
+  Models: { type: String, enum: ["TE-135", "TE-171", "TE-LF600", "TE-LM700", "AGILIA","TE-331","TE-SS700","TE-SS730","INJECTOMAT AGILIA"], required: true },
+  Image: { type: String }, // URL ของรูปภาพ
+  Last_Check: { type: Date },
+  End_Time: { type: Date } // คำนวณอัตโนมัติถ้า Status เป็น 1
 });
 
-// ✅ Auto calculate `End_Time` เมื่อ Status = 1 (ready)
-EquipmentSchema.pre("save", function (next) {
-  if (this.Status === 1) {
-    this.End_Time = new Date(this.Last_Check);
-    this.End_Time.setDate(this.End_Time.getDate() + 7); // เพิ่ม 7 วัน
-  }
-  next();
-});
-
-export default model("Equipment", EquipmentSchema);
+const Equipment = mongoose.models.Equipment || mongoose.model("Equipment", EquipmentSchema);
+export default Equipment;
