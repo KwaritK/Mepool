@@ -4,7 +4,7 @@ import Used from '../../../../public/clock.png'
 import Image from 'next/image';
 
 
-function ReadyPage() {
+function UsedPage() {
     return (
         <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto ' >
 
@@ -94,4 +94,4 @@ function ReadyPage() {
     )
 }
 
-export default ReadyPage;
+export default UsedPage;

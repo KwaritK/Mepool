@@ -77,15 +77,24 @@ function ReadyPage() {
                             </div>
                         </div>
                         {/* Action button */}
-                        <div className='flex items-center justify-between py-4 p-8 '>
-                            <div >
-                                <button className="w-28 bg-[#E27878] text-white py-2  rounded-lg text-lg font-semibold">
+                        <div className='flex mt-2 items-center justify-between px-4 py-2'>
+                            <div  >
+                                <button className="w-32 bg-[#E27878] text-white py-2  rounded-xl text-lg font-semibold">
                                     เก็บกลับ
                                 </button>
-                            </div>
+                                </div> 
+                            
                             <div>
-                                <button className="w-28 bg-[#1976D2] text-white py-2 rounded-lg text-lg font-semibold">
+                                <button className="w-32 bg-[#1976D2] text-white py-2 rounded-xl text-lg font-semibold">
                                     ตรวจเช็ค
+                                </button>
+                                </div>
+                            
+                                
+                            </div>
+                            <div className='flex py-2 items-center justify-center' >
+                                <button className="w-72 bg-[#FF9500] text-white py-2 rounded-xl text-lg font-semibold">
+                                    เบิกจ่าย
                                 </button>
                             </div>
                         </div>
@@ -99,8 +108,7 @@ function ReadyPage() {
 
 
 
-        </div>
-
+       
 
 
 

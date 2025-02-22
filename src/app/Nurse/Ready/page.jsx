@@ -20,11 +20,11 @@ function ReadyPage() {
             />
 
             <div>
-              <h1 className='text-xl text-[#284D76]'>
+              <h1 className='text-xl text-[#284D76] font-medium'>
                 ชื่อ : พยาบาล ใจดี
               </h1>
-              <p className="text-[#284D76]">12-xxxx-7890</p>
-              <p className="text-[#284D76]">แผนก : ward 7</p>
+              <p className="text-[#284D76] font-medium ">12-xxxx-7890</p>
+              <p className="text-[#284D76] font-medium ">แผนก : ward 7</p>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ function ReadyPage() {
             </div>
               {/* Action button */}
           <div className='flex items-center justify-center py-4'>
-            <button className="w-36 bg-[#4CAF50] text-white py-2 rounded-lg text-lg">
+            <button className="w-36 bg-[#4CAF50] text-white py-2 rounded-xl text-lg font-bold">
               ใช้
             </button>
           </div>

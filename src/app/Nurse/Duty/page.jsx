@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Duty from '../../../../public/dutyicon.png';
 
 
-const InfusionPumpDetail = () => {
+const DutyPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 overflow-y-auto">
       {/* Header user info*/}
@@ -75,7 +75,7 @@ const InfusionPumpDetail = () => {
             </div>
             {/* Action button */}
           <div className='flex items-center justify-center py-4'>
-            <button className="w-36 bg-[#FDB51D] text-white py-3 rounded-lg text-lg">
+            <button className="w-36 bg-[#FDB51D] text-white py-3 rounded-xl text-lg">
               เก็บคืน
             </button>
           </div>
@@ -93,4 +93,4 @@ const InfusionPumpDetail = () => {
   );
 };
 
-export default InfusionPumpDetail;
+export default DutyPage;

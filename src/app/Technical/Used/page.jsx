@@ -79,12 +79,12 @@ function ReadyPage() {
                         {/* Action button */}
                         <div className='flex items-center justify-between py-4 p-8 '>
                             <div >
-                                <button className="w-28 bg-[#E27878] text-white py-2  rounded-lg text-lg font-semibold">
+                                <button className="w-28 bg-[#E27878] text-white py-2  rounded-xl text-lg font-semibold">
                                     เก็บกลับ
                                 </button>
                             </div>
                             <div>
-                                <button className="w-28 bg-[#1976D2] text-white py-2 rounded-lg text-lg font-semibold">
+                                <button className="w-28 bg-[#1976D2] text-white py-2 rounded-xl text-lg font-semibold">
                                     ตรวจเช็ค
                                 </button>
                             </div>

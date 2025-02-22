@@ -4,13 +4,13 @@ import Repair from '../../../../public/repairicon.png'
 import Image from 'next/image';
 
 
-function ReadyPage() {
+function RepairPage() {
     return (
         <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto  ' >
 
             {/* Header user info*/}
             <div className='bg-[#A0D1E4]' >
-                <div className='bg-[#284D76] p-4 shadow-sm   rounded-br-full '>
+                <div className='bg-white p-4 shadow-sm   rounded-br-full '>
 
                     <div className='flex items-center gap-4'>
                         <div
@@ -20,11 +20,11 @@ function ReadyPage() {
                         />
 
                         <div>
-                            <h1 className='text-xl text-white'>
-                                ชื่อ : ช่างพยาบาล
+                            <h1 className='text-xl text-[#284D76]'>
+                                ชื่อ : พยาบาล ใจดี
                             </h1>
-                            <p className="text-white">12-xxxx-7890</p>
-                            <p className="text-white">แผนก : S00</p>
+                            <p className="text-[#284D76]">12-xxxx-7890</p>
+                            <p className="text-[#284D76]">แผนก : Ward 7</p>
                         </div>
                     </div>
                 </div>
@@ -76,19 +76,7 @@ function ReadyPage() {
                                 <p>วันที่คืน: 22/01/68 15:22</p>
                             </div>
                         </div>
-                        {/* Action button */}
-                        <div className='flex items-center justify-between py-4 p-8 '>
-                            <div >
-                                <button className="w-28 bg-[#E27878] text-white py-2  rounded-xl text-lg font-semibold">
-                                    เก็บกลับ
-                                </button>
-                            </div>
-                            <div>
-                                <button className="w-28 bg-[#1976D2] text-white py-2 rounded-xl text-lg font-semibold">
-                                    ตรวจเช็ค
-                                </button>
-                            </div>
-                        </div>
+                       
                     </div>
 
 
@@ -107,4 +95,4 @@ function ReadyPage() {
     )
 }
 
-export default ReadyPage;
+export default RepairPage;

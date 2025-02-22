@@ -100,10 +100,10 @@ const LoginPage = () => {
                 </div>
 
                 <div className='flex justify-center'>
-                    <Link href='/Ready'>
+                    <Link href='/Nurse/Ready'>
                     <button
                         type="submit"
-                        className="w-36 bg-[#2F519B] text-white py-3 rounded-2xl hover:bg-blue-800 transition-colors flex items-center justify-center space-x-2"
+                        className="w-36 bg-[#2F519B] text-white py-3 rounded-2xl hover:bg-blue-800 transition-colors flex items-center justify-center space-x-2 font-bold"
                     >
                         <span>เข้าสู่ระบบ</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 " viewBox="0 0 20 20" fill="currentColor">

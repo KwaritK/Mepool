@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Duty from '../../../../public/dutyicon.png';
 
 
-const InfusionPumpDetail = () => {
+const DutyOtherPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 overflow-y-auto">
       {/* Header user info*/}
@@ -89,4 +89,4 @@ const InfusionPumpDetail = () => {
   );
 };
 
-export default InfusionPumpDetail;
+export default DutyOtherPage;

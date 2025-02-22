@@ -79,7 +79,7 @@ function ReadyPage() {
 
                         {/* Action button */}
                         <div className='flex items-center justify-center py-4'>
-                            <button className="w-36 bg-[#F3F33D] text-[#1976D2] py-3 rounded-lg text-lg font-semibold">
+                            <button className="w-36 bg-[#F3F33D] text-[#1976D2] py-3 rounded-xl text-lg font-semibold">
                                 เก็บคืนให้
                             </button>
                         </div>

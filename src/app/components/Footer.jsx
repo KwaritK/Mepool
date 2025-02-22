@@ -23,7 +23,7 @@ function Footer() {
           </div>
         </Link>
 
-        <Link href="/Allitems">
+        <Link href="/Nurse/Allitems">
           <div className="flex flex-col items-center gap-1">
 
             <Image src={I3} alt=" อุปกรณ์ " className="text-blue-500" width={40} height={32} />

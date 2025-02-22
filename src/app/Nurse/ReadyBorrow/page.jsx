@@ -4,7 +4,7 @@ import Check from '../../../../public/check.png'
 import Image from 'next/image';
 
 
-function ReadyPage() {
+function ReadyBorrowPage() {
   return (
     <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto' >
 
@@ -84,7 +84,7 @@ function ReadyPage() {
                  <p className=' text-[#EE0582] py-2 text-xl'> * เครื่องนี้อยู่นอกแผนกของท่าน * </p>
             </div>
                <div className='flex justify-center'>
-                <button className="w-36 bg-[#EE0582] text-white py-3 rounded-lg text-lg">
+                <button className="w-36 bg-[#EE0582] text-white py-3 rounded-xl text-lg">
                     ยืมใช้
                  </button>
                 </div>
@@ -107,4 +107,4 @@ function ReadyPage() {
   )
 }
 
-export default ReadyPage;
+export default ReadyBorrowPage;

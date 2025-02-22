@@ -26,7 +26,7 @@ function HistoryPage() {
 
 
     </div>
-    <Footer></Footer>
+    
 
 </div>
 
