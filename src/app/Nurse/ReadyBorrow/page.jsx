@@ -2,9 +2,32 @@
 import React from 'react'
 import Check from '../../../../public/check.png'
 import Image from 'next/image';
-
+import Swal from 'sweetalert2';
 
 function ReadyBorrowPage() {
+  async function handleClick() {
+    const result = await Swal.fire({
+        title: 'ยืนยันการยืมใช้ ?',
+        text: "กดปุ่มยืนยันเพื่อบันทึกข้อมูลการยืมใช้ข้ามแผนก",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'ยืนยัน',
+        cancelButtonText: 'ยกเลิก'
+    });
+
+    if (result.isConfirmed) {
+        Swal.fire({
+            icon: 'success',
+            title: 'ยืมใช้ใช้สำเร็จ',
+            text: 'ยืมใช้จากแผนก.....ไปที่แผนก.....ของผู้เบิกใช้',
+            confirmButtonText: 'ตกลง',
+          
+            
+        });
+    }
+}
   return (
     <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto' >
 
@@ -83,8 +106,8 @@ function ReadyBorrowPage() {
              <div className='font-bold  flex justify-center '>
                  <p className=' text-[#EE0582] py-2 text-xl'> * เครื่องนี้อยู่นอกแผนกของท่าน * </p>
             </div>
-               <div className='flex justify-center'>
-                <button className="w-36 bg-[#EE0582] text-white py-3 rounded-xl text-lg">
+               <div className='flex justify-center py-4'>
+                <button className="w-36 bg-[#EE0582] text-white py-3 rounded-xl text-lg font-bold" onClick={handleClick}>
                     ยืมใช้
                  </button>
                 </div>

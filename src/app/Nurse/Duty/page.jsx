@@ -3,9 +3,41 @@
 import React from 'react';
 import Image from 'next/image';
 import Duty from '../../../../public/dutyicon.png';
+import Swal from 'sweetalert2';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 
 const DutyPage = () => {
+
+  const router = useRouter();
+
+  async function handleClick() {
+    const result = await Swal.fire({
+      title: 'ยืนยันการเก็บ ?',
+      text: "กดปุ่มยืนยันเพื่อบันทึกข้อมูลการเก็บ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ยืนยัน',
+      cancelButtonText: 'ยกเลิก'
+    });
+
+    if (result.isConfirmed) {
+      Swal.fire({
+        icon: 'success',
+        title: 'เก็บสำเร็จ',
+        text: 'เครื่องนี้ถูกเก็ลบหลังจากใช้งานรอการตรวจสอบ',
+        confirmButtonText: 'ตกลง',
+
+
+
+      });
+      // Redirect ไปหน้าที่ต้องการ
+      router.push('/Nurse/Used'); // เปลี่ยนเป็นหน้าที่ต้องการ
+    }
+  }
   return (
     <div className="min-h-screen bg-gray-50 overflow-y-auto">
       {/* Header user info*/}
@@ -32,16 +64,16 @@ const DutyPage = () => {
 
 
         {/* Device info */}
-      <div className='p-4 r mb-4  flex items-center justify-center'>
-        <div className="">
-          <h2 className="text-[#284D76] text-2xl mb-1 font-bold">Infusion pump S7003</h2>
+        <div className='p-4 r mb-4  flex items-center justify-center'>
+          <div className="">
+            <h2 className="text-[#284D76] text-2xl mb-1 font-bold">Infusion pump S7003</h2>
 
-           <div className='flex justify-center'>
-          <p className="text-[#284D76] font-bold">Terumo, TE-130</p>
+            <div className='flex justify-center'>
+              <p className="text-[#284D76] font-bold">Terumo, TE-130</p>
+            </div>
+
           </div>
-
         </div>
-      </div>
       </div>
       <div>
 
@@ -64,7 +96,7 @@ const DutyPage = () => {
                 alt="status"
                 width={20}
                 height={20}
-                />
+              />
               <span className="text-[#1976D2] text-lg font-bold ">กำลังถูกใช้งาน</span>
             </div>
 
@@ -74,20 +106,33 @@ const DutyPage = () => {
               <p>วันที่เบิกใช้: 22/01/68 </p>
             </div>
             {/* Action button */}
-          <div className='flex items-center justify-center py-4'>
-            <button className="w-36 bg-[#FDB51D] text-white py-3 rounded-xl text-lg">
-              เก็บคืน
-            </button>
-          </div>
+            <div className='flex items-center justify-between py-4 p-8'>
+              <div>
+                <Link href={'/Nurse/Report'}>
+                  <button className="w-28 bg-[#FF3D00] text-white py-3 rounded-xl text-lg font-bold"  >
+                    รายงาน
+                  </button>
+                </Link>
+
+              </div>
+
+              <div>
+                
+                <button className="w-28 bg-[#FDB51D] text-white py-3 rounded-xl text-lg font-bold" onClick={handleClick} >
+                  เก็บคืน
+                </button>
+              </div>
+
+            </div>
           </div>
 
-          
+
 
         </div>
       </div>
 
 
-    
+
 
     </div>
   );

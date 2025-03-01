@@ -2,9 +2,33 @@
 import React from 'react'
 import Used from '../../../../public/clock.png'
 import Image from 'next/image';
+import Swal from 'sweetalert2';
 
 
 function ReadyPage() {
+    async function handleClick() {
+        const result = await Swal.fire({
+          title: 'ยืนยันการเก็บกลับ ?',
+          text: "กดปุ่มยืนยันเพื่อบันทึกข้อมูลการเก็บกลับ",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ยืนยัน',
+          cancelButtonText: 'ยกเลิก'
+        });
+    
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: 'เก็บกลับสำเร็จ',
+            text: 'เครื่องนี้จะถูกเก็บกลับไปที่คลัง',
+            confirmButtonText: 'ตกลง',
+    
+    
+          });
+        }
+      }
     return (
         <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto  ' >
 
@@ -79,12 +103,12 @@ function ReadyPage() {
                         {/* Action button */}
                         <div className='flex items-center justify-between py-4 p-8 '>
                             <div >
-                                <button className="w-28 bg-[#E27878] text-white py-2  rounded-xl text-lg font-semibold">
+                                <button className="w-28 bg-[#E27878] text-white py-3  rounded-xl text-lg font-semibold" onClick={handleClick}>
                                     เก็บกลับ
                                 </button>
                             </div>
                             <div>
-                                <button className="w-28 bg-[#1976D2] text-white py-2 rounded-xl text-lg font-semibold">
+                                <button className="w-28 bg-[#1976D2] text-white py-3 rounded-xl text-lg font-semibold">
                                     ตรวจเช็ค
                                 </button>
                             </div>

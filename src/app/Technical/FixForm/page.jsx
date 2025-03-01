@@ -57,7 +57,7 @@ function CheckPage() {
                                 height={20}
                                 size={40} />
                             <span className='text-black' > รายการซ่อม</span>
-                            <input className='bg-gray-500'type='text'></input>
+                            <textarea className='bg-[#E7E7E7] border border-black rounded-xl w-full'></textarea>
 
                         </div>
 
@@ -69,7 +69,7 @@ function CheckPage() {
                                 height={20}
                                 size={40} />
                              <span className='text-black' > รายการเปลี่ยนอะไหล่ </span>
-                             <input className='bg-gray-500' type='text'></input>
+                             <textarea className='bg-[#E7E7E7] border border-black rounded-xl w-full'></textarea>
                         </div>
 
 

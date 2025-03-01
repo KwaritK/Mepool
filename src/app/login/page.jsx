@@ -1,49 +1,65 @@
 "use client"
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Logo from '../../../public/logo.png';
 import Mascot from '../../../public/Meepool.png';
 import Link from 'next/link';
-// import { signIn } from 'next-auth/react';
 // import { useRouter } from 'next/navigation';
+// import axios from 'axios';
+// import { useAuth } from '@/context/AuthContext';
+// import apiService from '@/services/api';
 
 const LoginPage = () => {
+    // const [credentials, setCredentials] = useState({
+    //     id: '',
+    //     password: ''
+    // });
+    // const [error, setError] = useState('');
+    // const [loading, setLoading] = useState(false);
+    // const router = useRouter();
+    // const { login } = useAuth();
 
-    //  const [id, setId] = useState("");
-    //  const [password, setPassword] = useState("");
-    //  const [error, setError] = useState("");
+    // const handleChange = (e) => {
+    //     setCredentials({
+    //         ...credentials,
+    //         [e.target.name]: e.target.value
+    //     });
+    // };
 
-    //  const router = useRouter();
-
-    //  const handleSubmit = async (e) => {
-    //      e.preventDefault();
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setError('');
+    //     setLoading(true);
+        
     //     try {
+    //         const data = await apiService.login(credentials);
             
-    //         const res = await signIn("credentials",{
-    //             id,password,redirect:false
-    //         })
-
-    //         if(res.error){
-    //             setError("Invalid credentials");
-    //             return
+    //         // ใช้ฟังก์ชัน login จาก AuthContext
+    //         login(data.user, data.token);
+            
+    //         // นำทางไปยังหน้าที่เหมาะสมตาม role
+    //         if (data.user.role === 'admin') {
+    //             router.push('/Admin/Dashboard');
+    //         } else if (data.user.role === 'technical') {
+    //             router.push('/Technical/Ready');
+    //         } else {
+    //             router.push('/Nurse/Ready');
     //         }
-    //         router.replace("welcome");
-
     //     } catch (error) {
-    //         console.log(error)
+    //         setError(
+    //             error.response?.data?.error || 
+    //             'เกิดข้อผิดพลาดในการเข้าสู่ระบบ กรุณาลองใหม่อีกครั้ง'
+    //         );
+    //     } finally {
+    //         setLoading(false);
     //     }
-    // }
+    // };
 
     return (
-
         <div className="min-h-screen bg-[#CEEDF9] w-full flex flex-col relative items-center">
-
-
-
             {/* Top curves */}
             <div className='relative top-0 w-full'>
-                <div className="  bg-white  shadow-sm   mb-[40px]  h-[130px] w-full rounded-b-[70%] flex flex-col justify-center items-center ">
-
+                <div className="bg-white shadow-sm mb-[40px] h-[130px] w-full rounded-b-[70%] flex flex-col justify-center items-center">
                     <Image
                         src={Logo}
                         alt="Hospital Logo"
@@ -51,15 +67,13 @@ const LoginPage = () => {
                         height={50}
                         className="object-contain"
                     />
-
                 </div>
             </div>
 
-
             {/* Mascot Icon */}
-            <div className="flex justify-center ">
+            <div className="flex justify-center">
                 <div className="relative w-72 h-72">
-                    <div className=" rounded-xl p-4">
+                    <div className="rounded-xl p-4">
                         <Image
                             src={Mascot}
                             alt="Medical Equipment Pool Mascot"
@@ -71,29 +85,29 @@ const LoginPage = () => {
                 </div>
             </div>
 
-
-
             {/* Login Form */}
-            <form 
-            className="space-y-5 px-4 max-w-md">
-
+            <form
+                className="space-y-5 px-4 max-w-md w-full"
+                
+            >
                 {/* {error && (
-                    <div className=' bg-red-500 w-fit text-sm text-white py-1 px-3 rounded-md mt-2'>
-                        {error}
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <span className="block sm:inline">{error}</span>
                     </div>
                 )} */}
+                
                 <div>
                     <input
-                        // onChange={(e) => setId(e.target.value)}
                         type="text"
+                        name="id"
                         placeholder="รหัสผู้ใช้"
-                        className="w-full px-6 py-4  shadow-sm rounded-3xl border border-gray-200 focus:outline-none focus:border-blue-500 text-black"
+                        className="w-full px-6 py-4 shadow-sm rounded-3xl border border-gray-200 focus:outline-none focus:border-blue-500 text-black"
                     />
                 </div>
                 <div>
                     <input
-                        // onChange={(e) => setPassword(e.target.value)}
                         type="password"
+                        name="password"
                         placeholder="รหัสผ่าน"
                         className="w-full px-6 py-4 shadow-sm rounded-3xl border border-gray-200 focus:outline-none focus:border-blue-500 text-black"
                     />
@@ -112,24 +126,19 @@ const LoginPage = () => {
                     </button>
                     </Link>
                 </div>
-
             </form>
 
-
-
             {/* Footer Text */}
-            <div className='relative bottom-0 w-full'>
-                <div className="  bg-white  shadow-sm   mt-[40px]  h-[130px] w-full rounded-t-[70%] flex flex-col justify-center items-center ">
-                    <div className=" text-[#2F519B] font-medium ">
-                        <p className=' text-xl mt-4 font-bold'>Medical Equipment Pool</p>
+            <div className='relative bottom-0 w-full mt-auto'>
+                <div className="bg-white shadow-sm mt-[40px] h-[130px] w-full rounded-t-[70%] flex flex-col justify-center items-center">
+                    <div className="text-[#2F519B] font-medium">
+                        <p className='text-xl mt-4 font-bold'>Medical Equipment Pool</p>
                         <p className="mt-1 font-bold">การให้บริการเครื่องมือแพทย์ส่วนกลาง</p>
                     </div>
                 </div>
             </div>
         </div>
-     
     );
 };
-
 
 export default LoginPage;

@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import Footer from '../../components/Footer'
+
 import {
     Select,
     SelectContent,
@@ -12,14 +12,14 @@ import {
 
 function ALLitemPage() {
     const wards = [
+        { name: 'MDQ', total: 11,repair: 9, ready: 5, inUse: 2, available: 4 },
         { name: 'WARD 7', total: 21, ready: 3, inUse: 2, available: 18 },
         { name: 'WARD 6', total: 24, ready: 4, inUse: 0, available: 20 },
-        { name: 'WARD 5', total: 11, ready: 5, inUse: 2, available: 4 },
         { name: 'ICU', total: 8, ready: 2, inUse: 1, available: 5 },
     ];
 
     const Allwards = [
-        { name: 'All', total: 136, ready: 25, inUse: 11, available: 100 },
+        { name: 'All', total: 136,repair: 9, ready: 25, inUse: 11, available: 100 },
         
     ];
 
@@ -34,14 +34,14 @@ function ALLitemPage() {
                     </div>
                 </div>
                 <div className="space-y-2">
-                    <div className="flex items-center space-x-2 text-[##284D76] px-16 py-6">
+                    <div className="flex items-center space-x-2 text-[#284D76] px-16 py-6">
                         <span>ประเภท</span>
                         <div className="flex-1">
                             <Select defaultValue="infusion">
-                                <SelectTrigger className="w-48">
+                                <SelectTrigger className="w-48 rounded-xl ">
                                     <SelectValue placeholder="เลือกประเภทปั๊ม" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className=" rounded-xl">
                                     <SelectItem value="infusion">Infusion Pump</SelectItem>
                                     <SelectItem value="syringe">Syringe Pump</SelectItem>
                                 </SelectContent>
@@ -56,6 +56,7 @@ function ALLitemPage() {
                 <div className="flex items-center justify-between text-md text-center px-2">
                     <div className="flex-1" />
                     <div className="flex flex-1 justify-end pr-3">
+                    <div className="w-16 text-center text-[#852C2C] ">ซ่อม</div>
                         <div className="w-16 text-center text-green-600 ">พร้อมใช้</div>
                         <div className="w-16 text-center text-red-500 ml-2">ใช้แล้ว</div>
                         <div className="w-16 text-center text-blue-500 ">ใช้อยู่</div>
@@ -73,7 +74,15 @@ function ALLitemPage() {
                                     </div>
                                 </div>
                                 
+
+
+                                <span className="text-3xl font-bold text-[#852C2C]">{Allwards.repair}</span>
+
                                 <div className="flex space-x-2">
+                                     
+                              
+                                        
+                                        
                                     
                                     <div className="w-16 h-16 border-2 border-[#0E9247] bg-white rounded-lg flex items-center justify-center">
                                         
@@ -102,6 +111,9 @@ function ALLitemPage() {
                                     </div>
                                 </div>
                                 
+
+                                <span className="text-3xl font-bold text-[#852C2C]">{ward.repair}</span>
+
                                 <div className="flex space-x-2">
                                     
                                     <div className="w-16 h-16 bg-[#C1E9D0] rounded-lg flex items-center justify-center">

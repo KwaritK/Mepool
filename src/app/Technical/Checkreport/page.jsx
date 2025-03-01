@@ -46,7 +46,10 @@ function CheckPage() {
                                 <button> Edit </button>
                             </Link>
 
-                            <div className="text-gray-500 mt-2">-- ปกติทั้งหมด --</div>
+                            <div className="text-red-500 mt-2">
+                                <li>โครงสร้างเครื่อง</li>
+                                <li> หน้าปัดและจอแสดงผล</li>
+                            </div>
                         </div>
 
 
@@ -76,6 +79,19 @@ function CheckPage() {
                         </div>
 
 
+                        <div className=" flex flex-col  p-3 border rounded-t-md   items-center justify-center  gap-2 mb-2 shadow-md" >
+                            <Image
+                                src={Note}
+                                alt="note"
+                                width={20}
+                                height={20}
+                                size={40} />
+                            <span className='text-black' > หมายเหตุ</span>
+                            <textarea className='block bg-[#E7E7E7] border border-black rounded-xl w-full ' ></textarea>
+
+                        </div>
+
+
 
                         <div className=" flex flex-col p-3 border rounded-t-md   items-center justify-center  gap-2 mb-2 shadow-md" >
                             <Image
@@ -86,12 +102,9 @@ function CheckPage() {
                                 size={40} />
                             <span className='text-black' > สถานที่ตั้งอุปกรณ์ </span>
                             <div className="flex gap-4 mt-2">
+
                                 <label className="flex items-center">
-                                    <input type="radio" name="location" className="mr-2" />
-                                    <span>ที่เดิม</span>
-                                </label>
-                                <label className="flex items-center">
-                                    <input type="radio" name="location" className="mr-2" />
+                                    <input type="radio" name="location" className="mr-2" value="" checked />
                                     <span>เก็บกลับคลัง</span>
                                 </label>
                             </div>
@@ -99,20 +112,7 @@ function CheckPage() {
 
 
 
-                        <div className="  flex flex-col p-3 border rounded-t-md   items-center justify-center  gap-2 mb-2 shadow-md">
-                            <Image
-                                src={Note}
-                                alt="note"
-                                width={20}
-                                height={20}
-                                size={40} />
-                            <span className='text-black' > การดูแลความสะอาด </span>
-                            <label className="flex items-center mt-2">
-                                <input type="checkbox" className="mr-2" />
-                                <span>ยืนยันดำเนินการเรียบร้อย</span>
-                            </label>
 
-                        </div>
 
                     </div>
                     {/* Action button */}

@@ -2,9 +2,33 @@
 import React from 'react'
 import Duty from '../../../../public/dutyicon.png'
 import Image from 'next/image';
+import Swal from 'sweetalert2';
 
 
 function ReadyPage() {
+    async function handleClick() {
+        const result = await Swal.fire({
+          title: 'ยืนยันการเก็บคืนให้ ?',
+          text: "กดปุ่มยืนยันเพื่อบันทึกข้อมูลการเก็บคืน",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ยืนยัน',
+          cancelButtonText: 'ยกเลิก'
+        });
+    
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: 'เก็บคืนสำเร็จ',
+            text: 'เครื่องนี้ถูกเก็บคืนหลังจากการใช้งานรอตรวจสอบ',
+            confirmButtonText: 'ตกลง',
+    
+    
+          });
+        }
+      }
     return (
         <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto  ' >
 
@@ -79,7 +103,7 @@ function ReadyPage() {
 
                         {/* Action button */}
                         <div className='flex items-center justify-center py-4'>
-                            <button className="w-36 bg-[#F3F33D] text-[#1976D2] py-3 rounded-xl text-lg font-semibold">
+                            <button className="w-36 bg-[#F3F33D] text-[#1976D2] py-3 rounded-xl text-lg font-bold "  onClick={handleClick}>
                                 เก็บคืนให้
                             </button>
                         </div>

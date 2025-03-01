@@ -2,10 +2,35 @@
 import React from 'react'
 import Check from '../../../../public/check.png'
 import Image from 'next/image';
-
+import Swal from 'sweetalert2';
+import ProtectedRoute from '@/app/components/ProtectRoute';
 
 function ReadyPage() {
+    async function handleClick() {
+        const result = await Swal.fire({
+          title: 'ยืนยันการเก็บกลับ ?',
+          text: "กดปุ่มยืนยันเพื่อบันทึกข้อมูลการเก็บกลับ",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ยืนยัน',
+          cancelButtonText: 'ยกเลิก'
+        });
+    
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: 'เก็บกลับสำเร็จ',
+            text: 'เครื่องนี้จะถูกเก็บกลับไปที่คลัง',
+            confirmButtonText: 'ตกลง',
+    
+    
+          });
+        }
+      }
     return (
+        <ProtectedRoute allowedRoles={['admin','technical']}>
         <div className='min-h-screen bg-[#F9F9F7] overflow-y-auto  ' >
 
             {/* Header user info*/}
@@ -79,13 +104,13 @@ function ReadyPage() {
                         {/* Action button */}
                         <div className='flex mt-2 items-center justify-between px-4 py-2'>
                             <div  >
-                                <button className="w-32 bg-[#E27878] text-white py-2  rounded-xl text-lg font-semibold">
+                                <button className="w-32 bg-[#E27878] text-white py-3  rounded-xl text-lg font-semibold"onClick={handleClick} >
                                     เก็บกลับ
                                 </button>
                                 </div> 
                             
                             <div>
-                                <button className="w-32 bg-[#1976D2] text-white py-2 rounded-xl text-lg font-semibold">
+                                <button className="w-32 bg-[#1976D2] text-white py-3 rounded-xl text-lg font-semibold">
                                     ตรวจเช็ค
                                 </button>
                                 </div>
@@ -93,7 +118,7 @@ function ReadyPage() {
                                 
                             </div>
                             <div className='flex py-2 items-center justify-center' >
-                                <button className="w-72 bg-[#FF9500] text-white py-2 rounded-xl text-lg font-semibold">
+                                <button className="w-72 bg-[#FF9500] text-white py-3 rounded-xl text-lg font-semibold" >
                                     เบิกจ่าย
                                 </button>
                             </div>
@@ -105,7 +130,7 @@ function ReadyPage() {
                 </div>
             </div>
 
-
+            </ProtectedRoute>
 
 
        

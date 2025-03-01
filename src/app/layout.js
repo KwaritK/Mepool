@@ -2,7 +2,8 @@
 import "./globals.css";
 import Footer from "./components/Footer";
 
-import {IBM_Plex_Sans_Thai } from 'next/font/google'
+
+import { IBM_Plex_Sans_Thai } from 'next/font/google'
 
 const font = IBM_Plex_Sans_Thai({
   subsets: ['thai'],
@@ -23,11 +24,14 @@ export default function RootLayout({ children }) {
       <body
         className={font.className + ` antialiased pb-[92px]`}
       >
-      
-        {children}
+
+        
+          {children}
+       
+
         <Footer></Footer>
 
-       
+
       </body>
     </html>
   );
